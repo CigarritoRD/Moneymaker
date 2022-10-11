@@ -7,7 +7,7 @@ import Planes from "../components/Planes";
 const Home = () => {
   return (
     <>
-      <Navbar activado={true} />
+      <Navbar />
       <Hero />
       <Planes />
       <Footer />

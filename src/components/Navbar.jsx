@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = ({ activado }) => {
+  const valorInicial = activado;
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-  const [transparente, setTransparent] = useState(true);
+  const [transparente, setTransparent] = useState(valorInicial);
 
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;
+
     if (currentScrollPos === 0) {
       setTransparent(true);
       console.log(currentScrollPos);
@@ -34,8 +36,7 @@ const Navbar = ({ activado }) => {
 
   return (
     <div
-      className={`z-[100]  ${
-        activado ? "fixed" : "relative bg-[#EC994B]"
+      className={`z-[100]  
       } duration-300 w-full text-white ${visible ? "top-0 text-white" : "top-[-100px]"} ${
         transparente ? "bg-transparent" : "bg-[#EC994B] text-[#15133C]"
       }`}
