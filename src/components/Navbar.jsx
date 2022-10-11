@@ -36,7 +36,7 @@ const Navbar = ({ activado }) => {
 
   return (
     <div
-      className={`z-[100]  
+      className={`z-[100]  ${activado && "fixed"}
       } duration-300 w-full text-white ${visible ? "top-0 text-white" : "top-[-100px]"} ${
         transparente ? "bg-transparent" : "bg-[#EC994B] text-[#15133C]"
       }`}
