@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = ({ activado }) => {
   const valorInicial = activado;
@@ -43,7 +43,9 @@ const Navbar = ({ activado }) => {
     >
       <div className=' flex justify-between items-center h-[80px] px-5 max-w-[1200px] mx-auto'>
         <div>
-          <h1 className='font-bold text-2xl'>M/M</h1>
+          <Link to={"/"}>
+            <h1 className='font-bold text-4xl'>M/M</h1>
+          </Link>
         </div>
         <div className='hidden'>
           <ul>

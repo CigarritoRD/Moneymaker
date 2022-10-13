@@ -8,7 +8,9 @@ const Formulario = ({
   textValue,
   redirectValue,
   repetirPassword,
+  textValue2,
   link,
+  passwordreset,
 }) => {
   return (
     <div className='h-screen grid place-content-center relative'>
@@ -51,6 +53,12 @@ const Formulario = ({
           <p>
             {textValue}
             <span className='underline text-lg font-bold text-blue-900'>{redirectValue}</span>
+          </p>
+        </Link>
+        <Link to={link}>
+          <p>
+            {textValue2}
+            <span className='underline text-lg font-bold text-blue-900'>{passwordreset}</span>
           </p>
         </Link>
       </form>

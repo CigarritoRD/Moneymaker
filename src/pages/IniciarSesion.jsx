@@ -14,6 +14,8 @@ const IniciarSesion = () => {
         redirectValue={" Crear cuenta"}
         link={"/registrarse"}
         botonValue={"Iniciar sesion"}
+        textValue2={`Olvide la contraseña: `}
+        passwordreset={"restablecer"}
       />
       <Footer />
     </>

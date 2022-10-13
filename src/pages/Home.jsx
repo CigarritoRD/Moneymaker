@@ -1,4 +1,5 @@
 import React from "react";
+import Beneficios from "../components/Beneficios";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
@@ -10,6 +11,7 @@ const Home = () => {
       <Navbar activado={true} />
       <Hero />
       <Planes />
+      <Beneficios />
       <Footer />
     </>
   );
