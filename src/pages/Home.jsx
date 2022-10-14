@@ -8,14 +8,14 @@ import WhyGold from "../components/WhyGold";
 
 const Home = () => {
   return (
-    <>
+    <div className='overflow-x-hidden'>
       <Navbar activado={true} />
       <Hero />
       <Planes />
       <Beneficios />
       <WhyGold />
       <Footer />
-    </>
+    </div>
   );
 };
 

@@ -7,7 +7,7 @@ import { BsFillArrowRightSquareFill } from "react-icons/bs";
 const Beneficios = () => {
   return (
     <div className=' mb-20'>
-      <h2 className='text-3xl font-bold relative max-w-fit mt-20 mb-10 md:text-5xl mx-auto text-blue-900 before:bg-orange-400 before:h-[5px] before:w-[60px] before:top-14 before:left-0 before:absolute'>
+      <h2 className='text-5xl font-bold relative max-w-fit mt-20 mb-10 md:text-6xl mx-auto text-blue-900 before:bg-orange-400 before:h-[5px] before:w-[60px] before:top-14 before:left-0 before:absolute'>
         Beneficios de <span className='text-orange-400 font-extrabold'>M/M</span>
       </h2>
       <div className='relative max-w-[1200px] mx-auto flex justify-center items-center'>
