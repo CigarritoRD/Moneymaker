@@ -11,7 +11,10 @@ const Beneficios = () => {
         Beneficios de <span className='text-orange-400 font-extrabold'>M/M</span>
       </h2>
       <div className='relative max-w-[1200px] mx-auto flex justify-center items-center'>
-        <h4 className='max-w-[1200px] mx-auto text-4xl font-medium leading-[60px] text-slate-700 mb-20 px-10'>
+        <h4
+          data-aos='fade-right'
+          className='max-w-[1200px] mx-auto text-4xl font-medium leading-[60px] text-slate-700 mb-20 px-10'
+        >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit totam illo error mollitia
           iusto iure earum perspiciatis explicabo quasi. Earum autem sed recusandae assumenda quo.
         </h4>
@@ -26,7 +29,11 @@ const Beneficios = () => {
 
       <div className='bg-slate-100 rounded card__container grid md:grid-cols-3 max-w-[1200px] mx-auto'>
         {/* cards */}
-        <div className='mx-auto flex flex-col items-center justify-center my-4 p-4 max-w-[400px]'>
+        <div
+          data-aos='fade-up'
+          data-aos-delay='50'
+          className='mx-auto flex flex-col items-center justify-center my-4 p-4 max-w-[400px]'
+        >
           <div>
             <img className='w-full' src={primera} alt='' />
           </div>
@@ -45,7 +52,11 @@ const Beneficios = () => {
         {/* fin - cards */}
 
         {/* cards */}
-        <div className='mx-auto flex flex-col items-center justify-center my-4 p-4 max-w-[400px]'>
+        <div
+          data-aos='fade-up'
+          data-aos-delay='100'
+          className='mx-auto flex flex-col items-center justify-center my-4 p-4 max-w-[400px]'
+        >
           <div>
             <img className='w-full' src={segunda} alt='' />
           </div>
@@ -64,7 +75,11 @@ const Beneficios = () => {
         {/* fin - cards */}
 
         {/* cards */}
-        <div className='mx-auto flex flex-col items-center justify-center my-4 p-4 max-w-[400px]'>
+        <div
+          data-aos='fade-up'
+          data-aos-delay='150'
+          className='mx-auto flex flex-col items-center justify-center my-4 p-4 max-w-[400px]'
+        >
           <div>
             <img className='w-full' src={tercera} alt='' />
           </div>

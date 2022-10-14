@@ -21,7 +21,11 @@ const Planes = () => {
           Planes
         </h2>
         <div className='relative '>
-          <h4 className='max-w-[1200px] mx-auto text-4xl font-medium leading-[60px] text-slate-700 mb-20 px-10'>
+          <h4
+            data-aos='fade-up'
+            data-aos-delay='50'
+            className='max-w-[1200px] mx-auto text-4xl font-medium leading-[60px] text-slate-700 mb-20 px-10'
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit totam illo error mollitia
             iusto iure earum perspiciatis explicabo quasi. Earum autem sed recusandae assumenda quo.
           </h4>
@@ -35,7 +39,11 @@ const Planes = () => {
         </div>
         <div className='card-container justify-center flex flex-col md:flex-row gap-5'>
           {/* card */}
-          <div className=' md:max-w-[300px] bg-white/80 md:flex-col border rounded-xl p-5 shadow-xl flex justify-between gap-5 my-5'>
+          <div
+            data-aos='fade-up'
+            data-aos-delay='50'
+            className=' md:max-w-[300px] bg-white/80 md:flex-col border rounded-xl p-5 shadow-xl flex justify-between gap-5 my-5'
+          >
             <div className='min-w-[150px] h-40 bg-slate-700 rounded place-self-center'>
               <img src='' alt='' />
             </div>
@@ -50,7 +58,11 @@ const Planes = () => {
           {/* card */}
 
           {/* card */}
-          <div className='md:max-w-[300px] md:flex-col bg-white/80 border rounded-xl p-5 shadow-xl flex justify-between gap-5 my-5'>
+          <div
+            data-aos='fade-left'
+            data-aos-delay='125'
+            className='md:max-w-[300px] md:flex-col bg-white/80 border rounded-xl p-5 shadow-xl flex justify-between gap-5 my-5'
+          >
             <div className='min-w-[150px] h-40 bg-slate-700 rounded place-self-center'>
               <img src='' alt='' />
             </div>
@@ -65,7 +77,11 @@ const Planes = () => {
           {/* card */}
 
           {/* card */}
-          <div className='md:max-w-[300px] md:flex-col bg-white/80 border rounded-xl p-5 shadow-xl flex justify-between gap-5 my-5 mb-20 md:mb-5'>
+          <div
+            data-aos='fade-right'
+            data-aos-delay='200'
+            className='md:max-w-[300px] md:flex-col bg-white/80 border rounded-xl p-5 shadow-xl flex justify-between gap-5 my-5 mb-20 md:mb-5'
+          >
             <div className='min-w-[150px] h-40 bg-slate-700 rounded place-self-center'>
               <img src='' alt='' />
             </div>

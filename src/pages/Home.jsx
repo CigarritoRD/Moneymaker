@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Planes from "../components/Planes";
+import WhyGold from "../components/WhyGold";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Hero />
       <Planes />
       <Beneficios />
+      <WhyGold />
       <Footer />
     </>
   );
