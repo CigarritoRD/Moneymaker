@@ -3,6 +3,7 @@ import primera from "../assets/images/svg/Bank note_Isometric.svg";
 import segunda from "../assets/images/svg/Online payment_Two Color.svg";
 import tercera from "../assets/images/svg/Coins_Isometric.svg";
 import { BsFillArrowRightSquareFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Beneficios = () => {
   return (
@@ -41,13 +42,15 @@ const Beneficios = () => {
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore suscipit aliquid
             consectetur soluta velit tempore.
           </p>
-          <button className='w-full justify-center md:w-auto group hover:shadow-2xl hover:scale-105 duration-300  hover:shadow-orange-400/40 text-lg font-bold flex gap-2 items-center  py-3 px-4 rounded bg-slate-700 text-white'>
-            Registrate
-            <BsFillArrowRightSquareFill
-              className='group-hover:translate-x-3 duration-300'
-              fill='gold'
-            />
-          </button>
+          <Link to={"/registrarse"}>
+            <button className='w-full justify-center md:w-auto group hover:shadow-2xl hover:scale-105 duration-300  hover:shadow-orange-400/40 text-lg font-bold flex gap-2 items-center  py-3 px-4 rounded bg-slate-700 text-white'>
+              Registrate
+              <BsFillArrowRightSquareFill
+                className='group-hover:translate-x-3 duration-300'
+                fill='gold'
+              />
+            </button>
+          </Link>
         </div>
         {/* fin - cards */}
 
@@ -64,13 +67,15 @@ const Beneficios = () => {
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore suscipit aliquid
             consectetur soluta velit tempore.
           </p>
-          <button className='w-full justify-center md:w-auto group hover:shadow-2xl hover:scale-105 duration-300  hover:shadow-orange-400/40 text-lg font-bold flex gap-2 items-center  py-3 px-4 rounded bg-slate-700 text-white'>
-            Registrate
-            <BsFillArrowRightSquareFill
-              className='group-hover:translate-x-3 duration-300'
-              fill='gold'
-            />
-          </button>
+          <Link to={"/registrarse"}>
+            <button className='w-full justify-center md:w-auto group hover:shadow-2xl hover:scale-105 duration-300  hover:shadow-orange-400/40 text-lg font-bold flex gap-2 items-center  py-3 px-4 rounded bg-slate-700 text-white'>
+              Registrate
+              <BsFillArrowRightSquareFill
+                className='group-hover:translate-x-3 duration-300'
+                fill='gold'
+              />
+            </button>
+          </Link>
         </div>
         {/* fin - cards */}
 
@@ -87,13 +92,15 @@ const Beneficios = () => {
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore suscipit aliquid
             consectetur soluta velit tempore.
           </p>
-          <button className=' w-full justify-center md:w-auto group hover:shadow-2xl hover:scale-105 duration-300  hover:shadow-orange-400/40 text-lg font-bold flex gap-2 items-center  py-3 px-4 rounded bg-slate-700 text-white'>
-            Registrate
-            <BsFillArrowRightSquareFill
-              className='group-hover:translate-x-3 duration-300'
-              fill='gold'
-            />
-          </button>
+          <Link to={"/registrarse"}>
+            <button className='w-full justify-center md:w-auto group hover:shadow-2xl hover:scale-105 duration-300  hover:shadow-orange-400/40 text-lg font-bold flex gap-2 items-center  py-3 px-4 rounded bg-slate-700 text-white'>
+              Registrate
+              <BsFillArrowRightSquareFill
+                className='group-hover:translate-x-3 duration-300'
+                fill='gold'
+              />
+            </button>
+          </Link>
         </div>
         {/* fin - cards */}
       </div>
