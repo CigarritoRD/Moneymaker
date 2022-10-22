@@ -4,11 +4,14 @@ import bg from "../assets/images/bg.png";
 import { Alerta } from "../components/Alerta";
 
 const INITIAL_VALUES = {
+  nombre: "",
+  apellido: "",
   email: "",
   password: "",
-  passwordRepeat: "",
+  confirmarPassword: "",
 };
 const Formulario = ({
+  guardar,
   botonValue,
   tituloValue,
   textValue,
@@ -20,22 +23,22 @@ const Formulario = ({
   const [values, setValues] = useState(INITIAL_VALUES);
   const [alert, setAlert] = useState({ msg: "", error: false });
 
-  const { email, password, passwordRepeat } = values;
+  const { nombre, apellido, email, password, confirmarPassword } = values;
 
   const navigate = useNavigate();
   const validarFormulario = (values) => {
-    const { email, password, passwordRepeat } = values;
+    const { email, password, confirmarPassword } = values;
 
-    if ([email, password, passwordRepeat].includes(""))
+    if ([email, password, confirmarPassword].includes(""))
       return setAlert({ msg: "hay campos vacios", error: true });
 
     if (password.length < 5)
-      return setAlert({ msg: "la contraseña debe tener almenos 5 caracteres", error: true });
+      return setAlert({ msg: "la contraseña debe tener almenos 6 caracteres", error: true });
 
-    if (password !== passwordRepeat)
+    if (password !== confirmarPassword)
       return setAlert({ msg: "las contraseñas no coinciden", error: true });
 
-    return setAlert({ msg: "cuenta creada exitosamente", error: false });
+    return values;
   };
 
   const handleChange = (e) => {
@@ -43,9 +46,20 @@ const Formulario = ({
       return { ...oldValues, [e.target.name]: e.target.value };
     });
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    validarFormulario(values) && navigate("/admin");
+    if (validarFormulario(values)) {
+      try {
+        const { res, data } = await guardar(values);
+        if (!res.ok) return setAlert({ msg: data.msg, error: true });
+        if (res.ok) {
+          setAlert({ msg: data.msg, error: false });
+          setTimeout(() => navigate("/iniciarsesion"), 4000);
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
   };
 
   const { msg, error } = alert;
@@ -63,6 +77,22 @@ const Formulario = ({
           {tituloValue}
         </h2>
         {msg && <Alerta mensaje={msg} error={error} />}
+        <input
+          onChange={handleChange}
+          className='bg-orange-100 p-4 rounded my-4 block w-full'
+          type='text'
+          name='nombre'
+          placeholder='Nombre'
+          value={nombre}
+        />
+        <input
+          onChange={handleChange}
+          className='bg-orange-100 p-4 rounded my-4 block w-full'
+          type='text'
+          name='apellido'
+          placeholder='Primer apellido'
+          value={apellido}
+        />
         <input
           onChange={handleChange}
           className='bg-orange-100 p-4 rounded my-4 block w-full'
@@ -84,9 +114,9 @@ const Formulario = ({
           onChange={handleChange}
           className='bg-orange-100 p-4 rounded my-4 block w-full'
           type='password'
-          name='passwordRepeat'
+          name='confirmarPassword'
           placeholder='Repetir contraseña'
-          value={passwordRepeat}
+          value={confirmarPassword}
         />
 
         <input

@@ -1,7 +1,36 @@
 import { IoWalletSharp } from "react-icons/io5";
 import { HiMenuAlt3 } from "react-icons/hi";
+import useAuth from "../../hooks/useAuth";
+import RiseLoader from "react-spinners/RiseLoader";
+
+import { Navigate } from "react-router-dom";
+import { usePlanes } from "../../hooks/usePlan";
 
 const Dashboard = () => {
+  const { usuario, cargando, cerrarSesion } = useAuth();
+  const { fetchPlan, planes } = usePlanes();
+
+  const clickHandler = (e) => {
+    e.preventDefault();
+    if (usuario._id) cerrarSesion();
+  };
+
+  if (cargando)
+    return (
+      <div className='h-screen w-full grid place-content-center'>
+        <RiseLoader
+          color={"#fff240"}
+          loading={cargando}
+          size={150}
+          aria-label='Loading Spinner'
+          data-testid=''
+          loader={"RiseLoader"}
+        />
+      </div>
+    );
+
+  if (!usuario?._id) return <Navigate to={"/"} />;
+  if (!planes?.invertido) fetchPlan();
   return (
     <div className=''>
       <div className='h-32 flex flex-col'>
@@ -11,7 +40,24 @@ const Dashboard = () => {
             <HiMenuAlt3 className='cursor-pointer' />
           </div>
         </div>
-        <h2 className='text-center font-bold text-2xl text-blue-900 mt-2'>Administrador</h2>
+        <div className='flex justify-between'>
+          <div>
+            <p className='ml-5'>
+              Hola, <span className='font-bold capitalize'>{usuario?.nombre}.</span>
+            </p>
+
+            <p className='ml-5'>
+              tu plan actual es:
+              <span className='font-bold uppercase'> {planes?.nombre}</span>
+            </p>
+          </div>
+          <button
+            onClick={clickHandler}
+            className=' p-3 font-bold hover:text-yellow-400 duration-300'
+          >
+            SALIR
+          </button>
+        </div>
       </div>
       <div className='border min-h-screen bg-yellow-400 '>
         <div className='grid md:grid-cols-3 md:my-10'>
@@ -23,7 +69,7 @@ const Dashboard = () => {
             <div>
               {" "}
               <p className='my-1'>Capital total</p>
-              <h4 className='font-bold text-2xl'>$10,000.70</h4>
+              <h4 className='font-bold text-2xl text-right'>{planes?.invertido ?? 0}$</h4>
             </div>
           </div>
           {/* elemento del dashboard */}
@@ -35,7 +81,7 @@ const Dashboard = () => {
             <div>
               {" "}
               <p className='my-1'>Inversion Actual</p>
-              <h4 className='font-bold text-2xl'>$4,000.70</h4>
+              <h4 className='font-bold text-2xl text-right '>{planes?.plan?.ganacias ?? 0}$</h4>
             </div>
           </div>
           {/* elemento del dashboard */}
@@ -47,7 +93,7 @@ const Dashboard = () => {
             <div>
               {" "}
               <p className='my-1'>Retirable</p>
-              <h4 className='font-bold text-2xl'>$1,060.70</h4>
+              <h4 className='font-bold text-2xl text-right'>{planes?.plan?.ganacias ?? 0}$</h4>
             </div>
           </div>
           {/* elemento del dashboard */}
@@ -65,7 +111,7 @@ const Dashboard = () => {
               <div className='flex-1'>
                 <p>plan basico</p>
 
-                <p className='font-bold text-lg'>$32.00 x Dia.</p>
+                <p className='font-bold text-lg'>{planes?.plan?.ganacias ?? 0}$ x Dia.</p>
               </div>
             </div>
           </div>
@@ -82,7 +128,9 @@ const Dashboard = () => {
               <div className='flex-1'>
                 <p>plan basico</p>
 
-                <p className='font-bold text-lg'>$960.00 x Ciclo.</p>
+                <p className='font-bold text-lg'>
+                  {planes?.plan?.ganacias * 45 ?? 0 * 45}$ x Ciclo.
+                </p>
               </div>
             </div>
           </div>
