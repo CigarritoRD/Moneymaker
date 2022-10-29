@@ -7,6 +7,7 @@ import Dashboard from "./pages/admin/Dashboard";
 import ConfirmarCuenta from "./pages/ConfirmarCuenta";
 import { AuthProvider } from "./context/AuthContext";
 import { PlanesProvider } from "./context/PlanesContext";
+import AdquirirPlan from "./pages/admin/AdquirirPlan";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
 
           {/* rutas protegidas */}
           <Route path='/admin' element={<Dashboard />} />
+          <Route path='/admin/adquirirPlan' element={<AdquirirPlan />} />
         </Routes>
       </PlanesProvider>
     </AuthProvider>

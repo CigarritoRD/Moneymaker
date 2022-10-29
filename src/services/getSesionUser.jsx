@@ -1,6 +1,6 @@
 const getSesionUser = async (token) => {
   try {
-    const res = await fetch("http://localhost:4000/API/usuario/perfil", {
+    const res = await fetch("http://192.168.100.182:4000/API/usuario/perfil", {
       method: "GET",
       mode: "cors",
       headers: { authorization: "Bearer " + token },

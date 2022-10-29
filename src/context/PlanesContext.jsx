@@ -14,7 +14,7 @@ const PlanesProvider = ({ children }) => {
       return setLoading(false);
     }
     try {
-      const res = await fetch("http://localhost:4000/API/planes", {
+      const res = await fetch("http://192.168.100.182:4000/API/planes", {
         headers: {
           method: "GET",
           mode: "cors",

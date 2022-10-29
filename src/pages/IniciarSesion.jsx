@@ -19,7 +19,7 @@ const IniciarSesion = () => {
     if ([email, password].includes(""))
       return setAlert({ msg: "llena ambos campos para inciar sesion", error: true });
     try {
-      const { token, msg } = await getUserToken(email, password);
+      const { token, msg } = await getUserToken(email.toLowerCase(), password);
 
       if (!token) return setAlert({ msg: msg, error: true });
 

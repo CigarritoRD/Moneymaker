@@ -1,9 +1,12 @@
 const getUserToken = async (email, password) => {
   try {
-    const res = await fetch("http://localhost:4000/API/usuario/iniciarsesion", {
+    const res = await fetch("http://192.168.100.182:4000/API/usuario/iniciarsesion", {
       method: "POST",
       mode: "cors",
-      headers: { "Content-Type": "application/json" },
+
+      headers: {
+        "Content-Type": "application/json",
+      },
 
       body: JSON.stringify({ email, password }),
     });
